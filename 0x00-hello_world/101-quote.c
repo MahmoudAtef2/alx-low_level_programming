@@ -1,15 +1,18 @@
-#include <stdio.h>
+#include<unistd.h>
 
 /**
  * main - Entry point
  *
- * Description: A C progam that prints with printf function.
+ * Description: print a qoute using write function
+ *       ssize_t write(int fd,const void *buf,size_t count);
  *
- * Return: Always 0 (Success)
+ * Return: 1 (not success)
 */
 
 int main(void)
 {
-	printf("with proper grammar, but the outcome is a piece of art,\n");
-	return (0);
+        char quo[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+
+        write(1, quo, 59);
+        return (1);
 }
