@@ -8,14 +8,10 @@
  * Return: 1 equal success, -1 equal erorr.
  */
 int set_bit(unsigned long int *n, unsigned int index)
-
-int clear_bit(unsigned long int *number, int index)
 {
-	if (index > 63) {
-	return -1;
-}
-	unsigned long int mask = ~(1UL << index);
+	if (index > 63)
+		return (-1);
 
-	*number = (*number & mask);
-	return 1;
+	*n = ((1UL << index) | *n);
+	return (1);
 }
