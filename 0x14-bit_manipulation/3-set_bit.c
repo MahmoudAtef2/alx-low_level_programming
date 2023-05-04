@@ -11,11 +11,11 @@ int set_bit(unsigned long int *n, unsigned int index)
 
 int clear_bit(unsigned long int *number, int index)
 {
-	if (index > 63)
-	{
-		return (-1);
-	}
+	if (index > 63) {
+	return -1;
+}
 	unsigned long int mask = ~(1UL << index);
+
 	*number = (*number & mask);
-		return (1);
+	return 1;
 }
