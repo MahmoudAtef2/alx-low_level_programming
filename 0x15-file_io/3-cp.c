@@ -3,13 +3,13 @@
 #include <stdlib.h>
 
 char *create_buffer(char *file);
-void close_file(int fdo);
+void close_file(int fd);
 
 /**
  * create_buffer - Allocates a buffer.
  * @file: The name of the file buffer.
  *
- * Return:the newly-allocated buffer.
+ * Return: the allocated buffer.
  */
 char *create_buffer(char *file)
 {
@@ -31,15 +31,15 @@ char *create_buffer(char *file)
  * close_file - Closes descriptors of the file.
  * @fd: The file descriptor.
  */
-void close_file(int fdo)
+void close_file(int fd)
 {
-	int g;
+	int ch;
 
-	g = close(fdo);
+	ch = close(fd);
 
-	if (g == -1)
+	if (ch == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fdo %d\n", fdo);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
 }
@@ -99,4 +99,3 @@ int main(int argc, char *argv[])
 
 	return (0);
 }
-
