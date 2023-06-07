@@ -12,7 +12,9 @@ int prime_check(int n, int num);
 int is_prime_number(int n)
 {
 	if (n <= 1)
+	{
 		return (0);
+	}
 	return (prime_check(n, n - 1));
 }
 
@@ -27,8 +29,12 @@ int is_prime_number(int n)
 int prime_check(int n, int num)
 {
 	if (num == 1)
+	{
 		return (1);
+	}
 	if (n % num == 0 && num > 0)
+	{
 		return (0);
+	}
 	return (prime_check(n, num - 1));
 }
